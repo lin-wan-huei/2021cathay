@@ -1,0 +1,228 @@
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 23px 20px;
+    z-index: 888;
+    transition: 0.4s;
+    color: #fff;
+    font-size: 17px;
+    transition: 0.4s;
+    background-color: #308548;
+}
+
+header .menu {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .menu li {
+    cursor: pointer;
+    margin-right: 20px;
+    transition: 0.4s;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    transition: 0.4s;
+}
+
+header .menu li a {
+    transition: 0.4s;
+    text-decoration: none;
+    color: #c7c7c7;
+}
+
+header .menu li:hover, header .menu li a:hover {
+    color: #fff;
+}
+
+.open {
+    display: none;
+}
+
+@media (max-width: 1025px) {
+    header {
+        padding: 13px 10px;
+    }
+    header .menu li {
+        margin: 0 10px;
+    }
+}
+
+header .header_close{
+    top: 0!important;
+}
+@media (max-width: 600px) {
+
+    header .menu {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    background-color: #308548;
+    top: -350px;
+    left: 0;
+    text-align: center;
+    padding: 15% 5% 5%;
+    transition: 0.4s;
+    z-index: 888;
+    }
+
+    header .menu li {
+    letter-spacing: 2px;
+    padding: 0 24px;
+    font-size: 17px;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    margin-bottom: 50px;
+    font-weight: 300;
+    cursor: pointer;
+    width: 100%;
+    margin: 30px auto;
+    }
+
+    .open {
+    display: block;
+    position: fixed;
+    width: 30px;
+    height: 25px;
+    top: 30px;
+    left: 30px;
+    z-index: 999;
+    cursor: pointer;
+    }
+    .openBtn {
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    }
+    .open span:nth-child(1) {
+    transition: 0.4s;
+    top: 7px;
+    }
+    .open span:nth-child(2) {
+    transition: 0.4s;
+    top: 0px;
+    box-shadow: 0 0 4px rgba(51, 51, 51, 0.3);
+    }
+    .open span:nth-child(3) {
+    transition: 0.4s;
+    top: -7px;
+    box-shadow: 0 0 4px rgba(51, 51, 51, 0.3);
+    }
+    .opening span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0;
+    }
+    .opening span:nth-child(2) {
+    background-color: rgba(255, 255, 255, 0);
+    }
+    .opening span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 0;
+    }
+}
+@media (max-width: 415px) {
+    .open {
+    display: block;
+    position: fixed;
+    width: 30px;
+    height: 25px;
+    top: 27px;
+    left: 20px;
+    }
+}
+@media (max-width: 321px) {
+    header {
+    padding: 10px 10px;
+    }
+}
+
+.gotop {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 24px;
+    background-color: #fff;
+    border-radius: 90px;
+    width: 50px;
+    height: 50px;
+    border: 1px #fff solid;
+    z-index: 9999;
+}
+
+@media all and (max-width: 415px) {
+    .gotop {
+        width: 40px;
+        height: 40px;
+        right: 10px;
+        bottom: 20px;
+    }
+}
+
+.gotop img {
+    width: 100%;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    display: block;
+    background-color: #363636;
+    padding: 62px 0;
+    z-index: 6;
+}
+
+footer a {
+    display: inline;
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 14px;
+    text-align: center;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 100;
+    line-height: 28px;
+    color: #fff;
+}
+
+@media all and (max-width: 769px) {
+    footer {
+        padding: 30px 10px 80px;
+        font-size: 12px;
+    }
+    footer p {
+        line-height: 22px;
+    }
+}
+
+.body_fixed {
+    overflow: hidden;
+    width: 100%;
+}
+
+@media all and (max-width: 769px) {
+    header .menu--edm {
+        align-content: flex-start;
+    }
+    header .menu--edm li {
+        width: 60%;
+        margin: 20px;
+    }
+}

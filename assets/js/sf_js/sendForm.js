@@ -1,0 +1,140 @@
+$('#sendBtn').click(function () {
+  
+  let selectedJob = $("#selectJob option:selected").val();
+  let selectedEvent = $("#event option:selected").val();
+  
+  var status = true
+  var last_name = $('#last_name').val()
+  var mobile = $('#mobile').val()
+  var email = $('#email').val()
+  var email_backup = $('#email_backup').val()
+  var company = $('#company').val()
+  var stockCode = $('#stockCode').val()
+  var title = $('#title').val()
+  var policy = $('#policy').val()
+  
+  // 隱藏備註欄位
+  let note = `股票代號：${$('#stockCode').val()}, 備用信箱：${$('#email_backup').val()}`
+  $('#00N2w00000Hh3Mv').val(note)
+  console.log($('#00N2w00000Hh3Mv').val())
+  
+  $Emailchecking2 = IsEmail($('#email').val())
+  
+  if ($Emailchecking2 == false && email !== '') {
+    status = false
+    $('.error.blank')
+      .removeClass('show')
+      .removeClass('flash')
+    $('.error.wrong')
+      .addClass('flash')
+      .addClass('flash')
+  } else {
+    $('.error.wrong')
+      .removeClass('show')
+      .removeClass('flash')
+  }
+  if (email == '') {
+    $('.error.blank')
+      .addClass('show')
+      .addClass('flash')
+    status = false
+  } else {
+    $('.error.blank')
+      .removeClass('show')
+      .removeClass('flash')
+  }
+  if (!$('#policy').is(':checked')) {
+    $('.checkbox .error')
+      .addClass('show')
+      .addClass('flash')
+    status = false
+  } else {
+    $('.checkbox .error')
+      .removeClass('show')
+      .removeClass('flash')
+  }
+  
+  if (status && email && mobile && last_name && company && selectedJob && title) {
+    $('#sfBtn').click()
+    $('form').hide()
+    $('.tks').show()
+  } else {
+    if (email == '') {
+      $('.errorMail')
+        .addClass('show')
+        .addClass('flash')
+    }
+    if (mobile == '') {
+      $('.errorMobile')
+        .addClass('show')
+        .addClass('flash')
+    }
+    if (last_name == '') {
+      $('.errorName')
+        .addClass('show')
+        .addClass('flash')
+    }
+    if (company == '') {
+      $('.errorCompany')
+        .addClass('show')
+        .addClass('flash')
+    }
+    if (selectedJob == '') {
+      $('.errorJob')
+        .addClass('show')
+        .addClass('flash')
+    }
+    if (selectedEvent == '') {
+      $('.errorEvent')
+        .addClass('show')
+        .addClass('flash')
+    }
+    if (title == '') {
+      $('.errorPosition')
+        .addClass('show')
+        .addClass('flash')
+    }
+    if (!$('#policy').is(':checked')) {
+      $('.checkbox .errorPolicy')
+        .addClass('show')
+        .addClass('flash')
+    }
+    return false
+  }
+  
+  // 如果必填欄位都過了 才會到這邊
+  if (status) {
+    // $("#sfBtn").click();
+    let data = {
+      "last_name": last_name,
+      "mobile": mobile,
+      "email": email,
+      "email_backup": email_backup,
+      "company": company,
+      "stockCode": stockCode,
+      "title": title,
+      "job": selectedJob,
+      "event": selectedEvent,
+    }
+    console.log(data)
+    send(data);
+    $(".tks").show();
+  }
+})
+
+// 送資料去googlesheet
+function send(data){
+  $.ajax({
+    type: "get",
+    // api url - google appscript 產出的 url
+    // sheet https://docs.google.com/spreadsheets/d/1fKNtzGcyfWj3EEg6GSKs3HCCN_-wdl-Iu2-_qgsdi5M/edit#gid=0
+    url: 'https://script.google.com/macros/s/AKfycbxphQPOQovA5BO3KqvKtpwGAphmwtlbjYzpUa4irRAMlCcXxtk/exec',
+    data: data,
+    dataType: "JSON",
+    // 成功送出 會回頭觸發下面這塊感謝
+    success: function (response) {
+      // console.log(response);
+      // alert('感謝，您已完成訂閱!');
+    }
+  });
+}
