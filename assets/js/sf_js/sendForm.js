@@ -1,8 +1,8 @@
 $('#sendBtn').click(function () {
   
   let selectedJob = $("#selectJob option:selected").val();
-  let selectedEvent = $("#event option:selected").val();
-  
+  let selectedEvent = $("input[name='event']:checked").val();
+
   var status = true
   var last_name = $('#last_name').val()
   var mobile = $('#mobile').val()
@@ -16,7 +16,6 @@ $('#sendBtn').click(function () {
   // 隱藏備註欄位
   let note = `股票代號：${$('#stockCode').val()}, 備用信箱：${$('#email_backup').val()}`
   $('#00N2w00000Hh3Mv').val(note)
-  console.log($('#00N2w00000Hh3Mv').val())
   
   $Emailchecking2 = IsEmail($('#email').val())
   
@@ -54,7 +53,7 @@ $('#sendBtn').click(function () {
       .removeClass('flash')
   }
   
-  if (status && email && mobile && last_name && company && selectedJob && title) {
+  if (status && email && mobile && last_name && company && selectedJob && title && stockCode) {
     $('#sfBtn').click()
     $('form').hide()
     $('.tks').show()
@@ -89,6 +88,11 @@ $('#sendBtn').click(function () {
         .addClass('show')
         .addClass('flash')
     }
+    if (stockCode == '') {
+      $('.errorStockCode')
+        .addClass('show')
+        .addClass('flash')
+    }
     if (title == '') {
       $('.errorPosition')
         .addClass('show')
@@ -104,7 +108,7 @@ $('#sendBtn').click(function () {
   
   // 如果必填欄位都過了 才會到這邊
   if (status) {
-    // $("#sfBtn").click();
+    $("#sfBtn").click();
     let data = {
       "last_name": last_name,
       "mobile": mobile,
@@ -116,8 +120,7 @@ $('#sendBtn').click(function () {
       "job": selectedJob,
       "event": selectedEvent,
     }
-    console.log(data)
-    send(data);
+     send(data);
     $(".tks").show();
   }
 })

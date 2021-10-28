@@ -46,7 +46,7 @@ header .menu li:hover, header .menu li a:hover {
 
 @media (max-width: 1025px) {
     header {
-        padding: 13px 10px;
+        padding: 25px 20px;
     }
     header .menu li {
         margin: 0 10px;
@@ -144,11 +144,6 @@ header .header_close{
     height: 25px;
     top: 27px;
     left: 20px;
-    }
-}
-@media (max-width: 321px) {
-    header {
-    padding: 10px 10px;
     }
 }
 
