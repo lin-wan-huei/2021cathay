@@ -12,6 +12,7 @@ $('#sendBtn').click(function () {
   var stockCode = $('#stockCode').val()
   var title = $('#title').val()
   var policy = $('#policy').val()
+  var date = $('#00N2w00000Hh3C1').val()
   
   // 隱藏備註欄位
   let note = `股票代號：${$('#stockCode').val()}, 備用信箱：${$('#email_backup').val()}`
@@ -41,6 +42,9 @@ $('#sendBtn').click(function () {
     $('.error.blank')
       .removeClass('show')
       .removeClass('flash')
+    $('.errorMobileLength')
+      .removeClass('show')
+      .removeClass('flash')
   }
   if (!$('#policy').is(':checked')) {
     $('.checkbox .error')
@@ -51,6 +55,28 @@ $('#sendBtn').click(function () {
     $('.checkbox .error')
       .removeClass('show')
       .removeClass('flash')
+  }
+
+  if (mobile == '') {
+    $('.errorMobile')
+        .addClass('show')
+        .addClass('flash')
+    status = false
+  } else if (mobile.length !== 10 && mobile.length !== 0) {
+      $('.errorMobileLength')
+          .addClass('show')
+          .addClass('flash')
+      $('.errorMobile')
+          .removeClass('show')
+          .removeClass('flash')
+      status = false
+  } else {
+      $('.errorMobile')
+          .removeClass('show')
+          .removeClass('flash')
+      $('.errorMobileLength')
+          .removeClass('show')
+          .removeClass('flash')
   }
   
   if (status && email && mobile && last_name && company && selectedJob && title && stockCode) {
@@ -110,6 +136,7 @@ $('#sendBtn').click(function () {
   if (status) {
     $("#sfBtn").click();
     let data = {
+      "date": date,
       "last_name": last_name,
       "mobile": mobile,
       "email": email,
@@ -130,8 +157,8 @@ function send(data){
   $.ajax({
     type: "get",
     // api url - google appscript 產出的 url
-    // sheet https://docs.google.com/spreadsheets/d/1fKNtzGcyfWj3EEg6GSKs3HCCN_-wdl-Iu2-_qgsdi5M/edit#gid=0
-    url: 'https://script.google.com/macros/s/AKfycbxphQPOQovA5BO3KqvKtpwGAphmwtlbjYzpUa4irRAMlCcXxtk/exec',
+    // sheet https://docs.google.com/spreadsheets/d/104neATR4PkGGGWLLeaHPSPVtsQSB7SIb9d749zBWrUo/edit#gid=0
+    url: 'https://script.google.com/macros/s/AKfycbzzOyvOK8vRipFXZwuwceTrhuevE57RJIMdz6HZm-hNcx1Q4Ck/exec',
     data: data,
     dataType: "JSON",
     // 成功送出 會回頭觸發下面這塊感謝

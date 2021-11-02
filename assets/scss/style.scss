@@ -455,11 +455,6 @@ p{
       @include mb-width_s(){
         padding: 10px;
       }
-      &--bg2{
-        background: rgb(48,133,72); /* Old browsers */
-        background: linear-gradient(to right,  rgba(48,133,72,1) 0%,rgba(58,165,124,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#308548', endColorstr='#3aa57c',GradientType=1 ); /* IE6-9 */
-      }
       .time{
         color: #fff;
         font-size: 20px;
@@ -528,6 +523,13 @@ p{
               width: 100%;
             }
           }
+        }
+      }
+      &--bg2{
+        background-color: #fff;
+        background: #fff;
+        .time, .text{
+          color: #4D4D4D;
         }
       }
     }
@@ -924,6 +926,14 @@ nav{
           margin-bottom: 10px;
           text-align: left;
           font-size: 19px;
+        }
+      }
+      .des{
+          background-color: #308548;
+          padding: 20px;
+          margin: 20px 0;
+        p{
+          color: #fff;
         }
       }
     }

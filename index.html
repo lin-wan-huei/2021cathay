@@ -301,7 +301,7 @@
 							<li>
 								<ul>
 									<li><strong>Robert G. Eccles</strong>, Visiting Professor of Management Practice, Saïd Business School, University of Oxford </li>
-									<li><strong>Sacha Sadan</strong>, Director of Environment Social and Governance, Financial Conduct Authority</li>
+									<li><strong>Sacha Sadan</strong>, Director of Environment Social and Governance, Financial Conduct Authority(邀約中)</li>
 									<li><strong>Anne Simpson</strong>, Director of Board Governance and Strategy, CalPERS</li>
 								</ul>
 							</li>
@@ -587,6 +587,9 @@
 					<li>本次論壇以線上直播，直播系統將採用Webex系統，請參加者自行事先下載系統。</li>
 					<li>活動報名相關問題請來信至cw_event@cw.com.tw 或撥打電話(02) 2507-8627 ext.833江小姐聯繫。</li>
 				</ul>
+				<div class="des">
+					<p>此論壇與證交所共同舉辦，可認列為董監事進修時數，認列時數為上半場3小時、下半場3小時。</p>
+				</div>
 			</div>
 			<!-- 問卷 -->
 			<div class="sectionSF">
@@ -599,7 +602,7 @@
 						<!--  ----------------------------------------------------------------------  -->
 						<!--  注意：這些欄位是選擇性的除錯元素。如果您要在除錯模式下測試，請取消註解這些行。 -->
 						<!-- <input type="hidden" name="debug" value=1>
-						<input type="hidden" name="debugEmail" value="@gmail.com"> -->
+						<input type="hidden" name="debugEmail" value="aa0960757329@gmail.com"> -->
 						<!--  ----------------------------------------------------------------------  -->
 			
 						<!-- 以下為 【必填欄位】 ---------------------------------------------------  -->
@@ -616,8 +619,9 @@
 								<p class="qes language_tw">手機號碼<span>*</span>：</p>
 								<p class="qes language_en">Phone numder<span>*</span>：</p>
 							</label>
-							<input id="mobile" maxlength="40" name="mobile" size="20" type="text"/>
+							<input id="mobile" maxlength="10" minlength="10" name="mobile" size="20" type="text"/>
 							<span class="error errorMobile">* 請填寫手機號碼</span>
+							<span class="error errorMobileLength">* 請填寫正確手機號碼</span>
 							<span class="tip">填寫格式範例：0988123123</span>
 
 							<label for="email">
@@ -638,6 +642,14 @@
 							<span class="tip">若您的公司信箱會阻擋外部郵件，建議於此填寫個人信箱</span>
 							<br>
 
+							<label for="title">
+								<p class="qes language_tw">您的職稱<span>*</span>：</p>
+								<p class="qes language_en">職稱name<span>*</span>：</p>
+							</label>
+							<input id="title" maxlength="40" name="title" size="20" class="position" type="text"/><br>
+							<span class="error errorPosition">* 請填寫職稱</span>
+							<span class="tip">若您為學生，請直接填寫學生</span>
+
 							<label for="company">
 								<p class="qes language_tw">公司名稱/學校<span>*</span>：</p>
 								<p class="qes language_en">Name<span>*</span>：</p>
@@ -646,7 +658,7 @@
 							<div style="position: relative;display: inline-block;"><div class="searchResult"></div></div>
 							<br>
 							<span class="error errorCompany">* 請填寫公司 ⁄ 單位</span>
-							<span class="tip">輸入公司名稱後，若為上市公司將會出現完整公司名稱選項供選擇。<br>非上市公司，請直接填寫完整公司名稱，仍可繼續完成報名。</span>
+							<span class="tip">輸入完整公司名稱後，若為上市公司將會出現完整公司名稱選項供選擇。<br>非上市公司，請直接填寫完整公司名稱，仍可繼續完成報名。</span>
 			
 							<label for="stockCode">
 								<p class="qes language_tw">股票代碼<span>*</span>：</p>
@@ -656,14 +668,6 @@
 							<span class="error errorStockCode">* 若您的公司非上市公司，請直接填寫無。</span>
 							<span class="tip">若您的公司非上市公司，請直接填寫無。</span>
 							<br>
-
-							<label for="title">
-								<p class="qes language_tw">您的職稱<span>*</span>：</p>
-								<p class="qes language_en">職稱name<span>*</span>：</p>
-							</label>
-							<input id="title" maxlength="40" name="title" size="20" class="position" type="text"/><br>
-							<span class="error errorPosition">* 請填寫職稱</span>
-							<span class="tip">若您為學生，請直接填寫學生</span>
 
 							<label for="selectJob">
 								<p class="qes language_tw">產業類別<span>*</span>：</p>

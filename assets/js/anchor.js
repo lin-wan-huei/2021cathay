@@ -9,7 +9,7 @@ $(function(){
 
     $(".part2").click(function(){
       $("html,body").animate(
-        { scrollTop: $(".agendaBox__content").offset().top + 1 },
+        { scrollTop: $(".agendaBox").offset().top + 1 },
         900
       );
       return false;
