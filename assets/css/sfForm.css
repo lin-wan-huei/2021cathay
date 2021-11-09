@@ -110,6 +110,10 @@
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
+.surveyCon .submitbtn p{
+  color: #fff;
+  text-align: center;
+}
 
 .surveyCon .submitbtn:hover {
   background-color: #1a4dad;

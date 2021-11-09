@@ -43,26 +43,22 @@ $(function(){
 
       if($(window).innerWidth() <= 769) {
           $(".menu>li").addClass("co");
-          $(".review>li a").addClass("co");
-          $(".part5").removeClass("co");
         }
         else {
           $(".menu>li").removeClass("co");
-          $(".review>li a").removeClass("co");
-          $(".part5").removeClass("co");
         }
       });
     
     $(".co").click(function () {
-      $("nav").hide("slow");
+      $(".menu").hide("slow");
       $("body").removeClass("body_fixed");
       $(".open").toggleClass("opening");
     });
     // 以上：在手機版時，選單加入class="co"，且點擊co之後收起選單等等
-
 });
 
 // 切換中英按鈕
+$(".language_en").hide();
 $(".btn_language").click(function () {
   $(".language_main").toggleClass('language_main--click');
   var i = $(".language_main p").attr("res");
@@ -90,7 +86,7 @@ $(".open--day").click(function () {
   $(".btn--day").css("background","#308548");
   $(".btn--night").css("background","#6D9E4A");
   $("html,body").animate(
-    { scrollTop: $(".btn_day_night").offset().top + 1 }, 900
+    { scrollTop: $(".agendaBox").offset().top + 1 }, 900
   );
 });
 // night
@@ -102,7 +98,7 @@ $(".open--night").click(function () {
   $(".btn--night").css("background","#308548");
   $(".btn--day").css("background","#6D9E4A");
   $("html,body").animate(
-    { scrollTop: $(".btn_day_night").offset().top + 1 }, 900
+    { scrollTop: $(".agendaBox").offset().top + 1 }, 900
   );
 });
 // 滾動時，固定頂部

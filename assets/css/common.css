@@ -30,7 +30,7 @@ header .menu li {
     transition: 0.4s;
 }
 
-header .menu li a {
+header .menu li a, header .menu li p {
     transition: 0.4s;
     text-decoration: none;
     color: #c7c7c7;
@@ -136,7 +136,10 @@ header .header_close{
     top: 0;
     }
 }
-@media (max-width: 415px) {
+@media (max-width: 440px) {
+    header {
+        padding: 15px 20px;
+    }
     .open {
     display: block;
     position: fixed;
