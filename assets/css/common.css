@@ -36,7 +36,7 @@ header .menu li a, header .menu li p {
     color: #c7c7c7;
 }
 
-header .menu li:hover, header .menu li a:hover {
+header .menu li:hover, header .menu li a:hover, header .menu li p:hover {
     color: #fff;
 }
 
@@ -137,9 +137,6 @@ header .header_close{
     }
 }
 @media (max-width: 440px) {
-    header {
-        padding: 15px 20px;
-    }
     .open {
     display: block;
     position: fixed;
