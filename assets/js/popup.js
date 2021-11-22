@@ -84,6 +84,14 @@ $('.open_popup--21').click(function(){
   $('.popupBox--21').fadeIn();
   $("body").addClass("body_fixed");
 });
+$('.open_popup--22').click(function(){
+  $('.popupBox--22').fadeIn();
+  $("body").addClass("body_fixed");
+});
+$('.open_popup--23').click(function(){
+  $('.popupBox--23').fadeIn();
+  $("body").addClass("body_fixed");
+});
 
 $('.open_cathay').click(function(){
   $('.popupBox--cathay').fadeIn();

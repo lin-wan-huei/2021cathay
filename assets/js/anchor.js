@@ -101,23 +101,3 @@ $(".open--night").click(function () {
     { scrollTop: $(".agendaBox").offset().top + 1 }, 900
   );
 });
-// 滾動時，固定頂部
-$(window).width(function()  {
-  if($(window).innerWidth() >= 1024) {
-    function fixDiv() {
-      var $cache = $('#getFixed');
-      if ($(window).scrollTop() > 100)
-      $cache.css({
-        'position': 'sticky',
-        'top': '130px'
-      });
-      else
-      $cache.css({
-        'position': 'relative',
-        'top': 'auto'
-      });
-    }
-    $(window).scroll(fixDiv);
-    fixDiv();
-  }
-});
