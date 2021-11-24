@@ -73,7 +73,7 @@ $mb_s: 321px;
   font-weight: 400;
   text-align: justify;
   word-wrap: break-word;
-  word-break: break-all; 
+  word-break: break-word; 
   @include mb-width_l(){
     font-size: 18px
   }
@@ -758,9 +758,11 @@ p{
           word-break: break-word;
           word-wrap: break-word;
         }
-        p{
-          text-align: left;
-        }
+      }
+      p{
+        text-align: left;
+        word-break: break-word;
+        word-wrap: break-word;
       }
     }
     h2{
